@@ -60,8 +60,12 @@
 
 .temperature {
   font-size: 40px;
-
   text-align: center;
+}
+.temperature small {
+  position: relative;
+  font-size: 20px;
+  top: -13px;
 }
 .forecast p {
   text-align: center;
