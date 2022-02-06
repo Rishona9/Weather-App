@@ -44,7 +44,6 @@
 .city {
   font-size: 40px;
   padding-top: 20px;
-  padding-left: 25px;
   text-align: center;
 }
 .dayTime,
@@ -55,13 +54,12 @@
   font-weight: 575;
 }
 .weather {
-  padding-left: 80px;
   text-align: center;
 }
 
 .temperature {
   font-size: 40px;
-  padding-left: 90px;
+
   text-align: center;
 }
 .forecast p {
