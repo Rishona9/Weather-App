@@ -15,7 +15,11 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-dayTime.innerHTML = `${day} ${hours}:${minutes}`;
+dayTime.innerHTML = `${day} ${now.toLocaleString("en-US", {
+  hour: "numeric",
+  minute: "numeric",
+  hour12: true,
+})}`;
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
