@@ -13,16 +13,17 @@
   border: 1px solid black;
 }
 .btn-primary {
-  color: white;
   background-color: white;
-  border-color: black;
+  border: 1px solid #ced4da;
+  background-clip: padding-box;
 }
 .btn-primary:hover {
   background-color: #3a86f5;
 }
 .btn-location {
   background-color: white;
-  border-color: black;
+  border: 1px solid #ced4da;
+  background-clip: padding-box;
 }
 .btn-location:hover {
   background-color: #3a86f5;
