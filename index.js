@@ -17,7 +17,11 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  dayTime.innerHTML = `${day} ${hours}:${minutes}`;
+  dayTime.innerHTML = `${day} ${now.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  })}`;
   let form = document.querySelector("form");
   form.addEventListener("submit", handleSubmit);
 }
