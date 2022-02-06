@@ -82,3 +82,7 @@
   background-color: #defcf9;
   box-shadow: 5px 5px 5px rgba(29, 28, 28, 0.582);
 }
+.footer {
+  display: block;
+  text-align: center;
+}
