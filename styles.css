@@ -9,8 +9,8 @@
   font-family: "Roboto", sans-serif;
 }
 .city-input {
-  border: 1px solid black;
   background-color: white;
+  border: 1px solid black;
 }
 .btn-primary {
   color: white;
@@ -18,14 +18,14 @@
   border-color: black;
 }
 .btn-primary:hover {
-  background-color: blue;
+  background-color: #3a86f5;
 }
 .btn-location {
   background-color: white;
   border-color: black;
 }
 .btn-location:hover {
-  background-color: blue;
+  background-color: #3a86f5;
 }
 .time {
   font-size: 15px;
