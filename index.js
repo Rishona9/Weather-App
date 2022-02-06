@@ -1,27 +1,34 @@
-let now = new Date();
-let dayTime = document.querySelector(".dayTime");
-let hours = now.getHours();
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  dayTime.innerHTML = `${day} ${hours}:${minutes}`;
+  let form = document.querySelector("form");
+  form.addEventListener("submit", handleSubmit);
 }
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-dayTime.innerHTML = `${day} ${now.toLocaleString("en-US", {
-  hour: "numeric",
-  minute: "numeric",
-  hour12: true,
-})}`;
-let form = document.querySelector("form");
-form.addEventListener("submit", handleSubmit);
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 
 function displayWeatherConditions(response) {
   document.querySelector(".city").innerHTML = response.data.name;
@@ -37,6 +44,9 @@ function displayWeatherConditions(response) {
   );
   document.querySelector("#feels-like-value").innerHTML = Math.round(
     response.data.main.feels_like
+  );
+  document.querySelector(".dayTime").innterHTML = formatDate(
+    response.data.dt * 1000
   );
 }
 function searchCity(city) {
