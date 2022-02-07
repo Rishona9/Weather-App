@@ -25,13 +25,15 @@ function formatDate(timestamp) {
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
-
 function displayWeatherConditions(response) {
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector(".description").innerHTML =
     response.data.weather[0].description;
+
+  fahrenheitTemperature = response.data.main.temp;
+
   document.querySelector("#temperature-value").innerHTML = Math.round(
-    response.data.main.temp
+    fahrenheitTemperature
   );
 
   document.querySelector("#humidity-value").innerHTML = Math.round(
@@ -75,5 +77,25 @@ function getCurrentLocation(event) {
 }
 let currentLocationButton = document.querySelector(".btn-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  let temperatureElement = document.querySelector("#temperature-value");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-value");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Cleveland");
