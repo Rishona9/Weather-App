@@ -28,6 +28,8 @@ form.addEventListener("submit", handleSubmit);
 
 function displayWeatherConditions(response) {
   document.querySelector(".city").innerHTML = response.data.name;
+  document.querySelector(".description").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#temperature-value").innerHTML = Math.round(
     response.data.main.temp
   );
