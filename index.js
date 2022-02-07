@@ -17,22 +17,14 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  dayTime.innerHTML = `${day} ${now.toLocaleString("en-US", {
+  return `${day} ${date.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
   })}`;
-  let form = document.querySelector("form");
-  form.addEventListener("submit", handleSubmit);
 }
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day];
-}
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 function displayWeatherConditions(response) {
   document.querySelector(".city").innerHTML = response.data.name;
@@ -49,7 +41,7 @@ function displayWeatherConditions(response) {
   document.querySelector("#feels-like-value").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  document.querySelector(".dayTime").innterHTML = formatDate(
+  document.querySelector(".dayTime").innerHTML = formatDate(
     response.data.dt * 1000
   );
 }
