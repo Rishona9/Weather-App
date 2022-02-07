@@ -1,6 +1,6 @@
 .container {
-  max-width: 800px;
-  max-height: 650px;
+  max-width: 850px;
+  max-height: 700px;
   padding: 20px;
   margin: 20px auto;
   border: 3px solid black;
@@ -58,19 +58,20 @@
   text-align: center;
 }
 .description {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 575;
   text-transform: capitalize;
 
   text-align: center;
 }
 .temperature {
-  font-size: 40px;
+  font-size: 35px;
+
   text-align: center;
 }
-.temperature small {
+.units {
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
   top: -13px;
 }
 .forecast p {
