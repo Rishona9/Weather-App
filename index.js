@@ -23,8 +23,7 @@ function formatDate(timestamp) {
     hour12: true,
   })}`;
 }
-let form = document.querySelector("form");
-form.addEventListener("submit", handleSubmit);
+
 function displayWeatherConditions(response) {
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector(".description").innerHTML =
@@ -91,6 +90,9 @@ function displayFahrenheitTemperature(event) {
 }
 
 let fahrenheitTemperature = null;
+
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
