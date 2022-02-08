@@ -48,7 +48,7 @@ function displayWeatherConditions(response) {
   document.querySelector(".dayTime").innerHTML = formatDate(
     response.data.dt * 1000
   );
-  document
+  let iconElement = document
     .querySelector("#main-icon")
     .setAttribute(
       "src",
@@ -95,7 +95,7 @@ let fahrenheitTemperature = null;
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let fahrenheitLink = document.querySelector("fahrenheit-link");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Cleveland");
