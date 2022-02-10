@@ -23,6 +23,31 @@ function formatDate(timestamp) {
     hour12: true,
   })}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col">
+            <div class="weather-forecast-day">${day}</div>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="partly cloudy"
+            />
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max">33°</span>
+              <span class="weather-forecast-temperature-min">20°</span>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displayWeatherConditions(response) {
   document.querySelector(".city").innerHTML = response.data.name;
@@ -90,6 +115,8 @@ function displayFahrenheitTemperature(event) {
 }
 
 let fahrenheitTemperature = null;
+
+displayForecast();
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
