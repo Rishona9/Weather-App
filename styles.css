@@ -81,16 +81,8 @@
   font-size: 18px;
   top: -13px;
 }
-.forecast p {
+.weather-forecast {
   text-align: center;
-  font-size: 20px;
-  font-weight: 575;
-}
-.day1,
-.day2,
-.day3,
-.day4,
-.day5 {
   max-width: 800px;
   padding: 5px;
   margin: 15px 10px 15px 10px;
@@ -98,6 +90,15 @@
   border-radius: 20px;
   background-color: #defcf9;
   box-shadow: 5px 5px 5px rgba(29, 28, 28, 0.582);
+}
+.weather-forecast-day {
+  font-size: 20px;
+}
+.weather-forecast-temperature-max {
+  font-size: 20px;
+}
+.weather-forecast-temperature-min {
+  font-size: 20px;
 }
 .footer {
   display: block;
