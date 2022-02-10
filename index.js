@@ -23,7 +23,7 @@ function formatDate(timestamp) {
     hour12: true,
   })}`;
 }
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
@@ -47,6 +47,11 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let apiKey = "124f39a2ff23ede6ec7ae29df4cc507f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}}&lon=${coordinates.lon}}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeatherConditions(response) {
@@ -79,6 +84,8 @@ function displayWeatherConditions(response) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "124f39a2ff23ede6ec7ae29df4cc507f";
@@ -115,8 +122,6 @@ function displayFahrenheitTemperature(event) {
 }
 
 let fahrenheitTemperature = null;
-
-displayForecast();
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
