@@ -37,7 +37,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -101,8 +101,8 @@ function displayWeatherConditions(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
 }
 function searchCity(city) {
