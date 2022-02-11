@@ -91,14 +91,14 @@
   background-color: #defcf9;
   box-shadow: 5px 5px 5px rgba(29, 28, 28, 0.582);
 }
-.weather-forecast-day {
+.weather-forecast-date {
   font-size: 20px;
 }
 .weather-forecast-temperature-max {
-  font-size: 20px;
+  font-size: 18px;
 }
 .weather-forecast-temperature-min {
-  font-size: 20px;
+  font-size: 18px;
 }
 .footer {
   display: block;
