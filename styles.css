@@ -104,3 +104,15 @@
   display: block;
   text-align: center;
 }
+@media (max-width: 576px) {
+  .container {
+    max-height: 1500px;
+  }
+  .weather-forecast {
+    display: flex;
+    justify-content: center;
+  }
+  .dayTime {
+    margin-top: 27px;
+  }
+}
